@@ -1,5 +1,8 @@
 // sections/Menu.tsx
 import styles from "../styles/Menu.module.css";
+import ShashlikImg from "../assets/images/menu/шашлык.jpg";
+import LulyaImg from "../assets/images/menu/люля.jpg";
+import HarchoImg from "../assets/images/menu/харчо.jpg";
 
 const Menu = () => {
   return (
@@ -17,7 +20,7 @@ const Menu = () => {
           {/* Пример блюда 1 */}
           <div className={styles.menuItem}>
             <div className={styles.itemImagePlaceholder}>
-              <img src="/assets/images/menu/шашлык.jpg" alt="" />
+              <img src={ShashlikImg} alt="" />
             </div>
             <h3 className={styles.itemName}>Шашлык из свинины</h3>
             <p className={styles.itemDescription}>
@@ -30,7 +33,7 @@ const Menu = () => {
           {/* Пример блюда 2 */}
           <div className={styles.menuItem}>
             <div className={styles.itemImagePlaceholder}>
-              <img src="/assets/images/menu/люля.jpg" alt="" />
+              <img src={LulyaImg} alt="" />
             </div>
             <h3 className={styles.itemName}>Люля-кебаб из баранины</h3>
             <p className={styles.itemDescription}>
@@ -54,7 +57,7 @@ const Menu = () => {
           {/* Пример блюда 4 */}
           <div className={styles.menuItem}>
             <div className={styles.itemImagePlaceholder}>
-              <img src="/assets/images/menu/харчо.jpg" alt="" />
+              <img src={HarchoImg} alt="" />
             </div>
             <h3 className={styles.itemName}>Суп Харчо</h3>
             <p className={styles.itemDescription}>

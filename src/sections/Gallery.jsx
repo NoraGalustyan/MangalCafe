@@ -5,6 +5,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; // Импортируем стили slick
 import "slick-carousel/slick/slick-theme.css"; // Импортируем тему slick
 
+import photo1 from "../assets/images/gallery/photo1.jpg"; // Обратите внимание на путь!
+import photo2 from "../assets/images/gallery/photo2.jpg";
+import photo3 from "../assets/images/gallery/photo3.jpg";
+import photo4 from "../assets/images/gallery/photo4.jpg";
+import photo5 from "../assets/images/gallery/photo5.jpg";
+
 const Gallery = () => {
   const settings = {
     dots: true, // Показывать точки навигации
@@ -15,35 +21,6 @@ const Gallery = () => {
     autoplay: true, // Автоматическая прокрутка
     autoplaySpeed: 3000, // Пауза между автоматическими слайдами
     arrows: true, // Показывать стрелки навигации
-    // Для того чтобы кастомные стрелки работали, убедитесь, что файлы иконок существуют
-    // prevArrow: (
-    //   <div className={styles.slickArrowContainer}>
-    //     <img
-    //       src="/icons/arrow-left.png"
-    //       alt="Previous"
-    //       className={styles.slickArrow}
-    //     />
-    //   </div>
-    // ),
-    // nextArrow: (
-    //   <div className={styles.slickArrowContainer}>
-    //     <img
-    //       src="/icons/arrow-right.png"
-    //       alt="Next"
-    //       className={styles.slickArrow}
-    //     />
-    //   </div>
-    // ),
-    // appendDots: (
-    //   dots, // Пользовательская обертка для точек
-    // ) => (
-    //   <div className={styles.slickDots}>
-    //     <ul> {dots} </ul>
-    //   </div>
-    // ),
-    // customPaging: (
-    //   i, // Пользовательская стилизация точек
-    // ) => <div className={styles.slickDotItem}>{i + 1}</div>,
     responsive: [
       {
         breakpoint: 768,
@@ -65,13 +42,7 @@ const Gallery = () => {
   };
 
   // Предполагаемые пути к вашим файлам изображений
-  const images = [
-    "/assets/images/gallery/photo1.jpg",
-    "/assets/images/gallery/photo2.jpg",
-    "/assets/images/gallery/photo3.jpg",
-    "/assets/images/gallery/photo4.jpg",
-    "/assets/images/gallery/photo5.jpg",
-  ];
+  const images = [photo1, photo2, photo3, photo4, photo5];
 
   return (
     <section id="gallery" className={styles.gallery}>
