@@ -1,0 +1,133 @@
+/* styles/Delivery.module.css */
+.delivery {
+  /* background-image: url("../assets/images/section_bg_delivery.jpg");  ЗАМЕНИТЕ НА РЕАЛЬНОЕ ИЗОБРАЖЕНИЕ */
+  background-size: cover;
+  background-position: center;
+  color: var(--dark-text-color);
+  position: relative;
+  padding: 80px 20px;
+}
+
+.delivery::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый фон */
+  z-index: -1;
+}
+
+.delivery h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.delivery .tagline {
+  font-size: 1.3em;
+  font-style: italic;
+  color: var(--secondary-color);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.deliveryContent {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Немного более плотный фон для контейнера */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: var(--box-shadow-light);
+}
+
+.deliveryContent h3 {
+  color: var(--primary-color);
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.deliveryContent p {
+  font-size: 1.05em;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  text-align: left; /* Выравнивание текста условий */
+}
+
+.deliveryTermsList {
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.deliveryTermsList li {
+  margin-bottom: 15px;
+  font-size: 1.05em;
+  color: var(--text-color);
+  text-align: left;
+  position: relative;
+  padding-left: 25px;
+}
+
+.deliveryTermsList li::before {
+  content: "•"; /* Маркер в виде точки */
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.deliveryAction {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.deliveryMap {
+  text-align: center;
+  margin-top: 40px;
+  border-radius: 10px;
+  overflow: hidden; /* Чтобы рамка карты была скругленной */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .delivery {
+    padding: 60px 15px;
+  }
+  .delivery p,
+  .deliveryContent p {
+    font-size: 1.1em;
+  }
+  .deliveryContent {
+    padding: 30px;
+  }
+  .deliveryContent h3 {
+    font-size: 1.6em;
+  }
+}
+
+@media (max-width: 480px) {
+  .delivery h2 {
+    font-size: 2.2em;
+  }
+  .delivery p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+  }
+  .deliveryContent {
+    padding: 20px;
+  }
+  .deliveryTermsList {
+    padding-left: 15px;
+  }
+  .deliveryTermsList li {
+    font-size: 1em;
+  }
+}

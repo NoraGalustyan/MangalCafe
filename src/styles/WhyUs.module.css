@@ -1,0 +1,86 @@
+/* styles/WhyUs.module.css */
+.whyUs {
+  /*background-image: url("../assets/images/section_bg_whyus.jpg.png");  ЗАМЕНИТЕ НА РЕАЛЬНОЕ ИЗОБРАЖЕНИЕ */
+  background-size: cover;
+  background-position: center;
+  color: var(--dark-text-color);
+  position: relative;
+  padding: 80px 20px; /* Добавим отступы, чтобы контент не прилипал */
+}
+
+.whyUs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый фон */
+  z-index: -1;
+}
+
+.whyUs h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.whyUs p {
+  font-size: 1.4em;
+  font-style: italic;
+  color: var(--secondary-color);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.whyUs ul {
+  list-style: disc; /* Используем маркеры списка */
+  padding-left: 20px; /* Отступ для маркеров */
+  text-align: center;
+  max-width: 600px; /* Ограничиваем ширину списка */
+  margin: 0 auto;
+}
+
+.whyUs li {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  color: var(--text-color);
+  text-align: left; /* Выравнивание по левому краю для элементов списка */
+  position: relative;
+  padding-left: 25px; /* Пространство для кастомного маркера */
+}
+
+.whyUs li::before {
+  content: "✓"; /* Наш маркер */
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color); /* Цвет маркера */
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .whyUs {
+    padding: 60px 15px;
+  }
+  .whyUs p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  .whyUs ul {
+    padding-left: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whyUs h2 {
+    font-size: 2.2em;
+  }
+  .whyUs p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+  }
+  .whyUs li {
+    font-size: 1em;
+  }
+}

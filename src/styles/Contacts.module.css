@@ -1,0 +1,118 @@
+/* styles/Contacts.module.css */
+.contacts {
+  /*background-image: url("../assets/images/section_bg.jpg");  ЗАМЕНИТЕ НА РЕАЛЬНОЕ ИЗОБРАЖЕНИЕ, если нужно */
+  background-size: cover;
+  background-position: center;
+  color: var(
+    --dark-text-color
+  ); /* Или другой цвет текста, который будет контрастировать */
+  position: relative;
+  padding: 80px 15px;
+}
+
+.contacts::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый фон */
+  z-index: -1;
+}
+
+.tagline {
+  font-size: 1.4em;
+  font-style: italic;
+  color: var(--secondary-color);
+  margin-bottom: 40px;
+}
+
+.sectionContent {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow-light);
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.8em;
+  margin-bottom: 15px;
+  color: var(--primary-color); /* Или ваш основной цвет */
+}
+
+/* Удалил .tagline, так как он может быть не нужен для этой секции */
+
+/* Стили для управления картой */
+.mapContainer {
+  margin-top: 40px;
+}
+
+.mapToggleButton {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  margin-bottom: 30px;
+  box-shadow: var(--box-shadow-light);
+}
+
+.mapToggleButton:hover {
+  background-color: var(--secondary-color); /* Или другой цвет при наведении */
+  transform: translateY(-2px);
+}
+
+.yandexMapWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Ограничиваем максимальную ширину карты */
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden; /* Скрываем всё, что выходит за рамки */
+  box-shadow: var(--box-shadow-medium);
+}
+
+.yandexMapIframe {
+  display: block; /* Убираем лишнее пространство под iframe */
+  border: none; /* Убираем рамку, если она есть */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .contacts {
+    padding: 60px 15px;
+  }
+  .sectionContent {
+    padding: 30px 20px;
+  }
+  .sectionTitle {
+    font-size: 2.4em;
+  }
+  .mapToggleButton {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+  .yandexMapWrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contacts h2 {
+    font-size: 2.2em;
+  }
+  .yandexMapIframe {
+    height: 350px; /* Уменьшаем высоту карты на мобильных */
+  }
+}

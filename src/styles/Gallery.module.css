@@ -1,0 +1,144 @@
+/* styles/Gallery.module.css */
+.gallery {
+  /*background-image: url("../assets/images/section_bg.jpg"); ЗАМЕНИТЕ НА РЕАЛЬНОЕ ИЗОБРАЖЕНИЕ */
+  background-size: cover;
+  background-position: center;
+  color: var(--dark-text-color);
+  position: relative;
+  padding: 80px 20px;
+}
+
+.gallery::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый фон */
+  z-index: -1;
+}
+
+.gallery h2 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.gallery p {
+  font-size: 1.3em;
+  font-style: italic;
+  color: var(--secondary-color);
+  margin-bottom: 50px; /* Больший отступ, чтобы дать место карусели */
+  text-align: center;
+}
+
+/* Стили для карусели react-slick */
+.slickContainer {
+  max-width: 700px; /* Ограничиваем ширину карусели */
+  margin: 0 auto;
+  position: relative;
+  padding: 0 50px 0 50px; /* Добавляем отступы для кнопок навигации */
+}
+
+/* Сброс стандартных стилей img */
+.slickImage {
+  width: 100%;
+  height: 400px; /*Фиксированная высота для единообразия */
+  object-fit: cover; /* Масштабируем изображение, сохраняя пропорции */
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-light);
+  cursor: grab; /* Указываем, что элемент можно перетаскивать */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.slickImage:hover {
+  transform: scale(1.02);
+  box-shadow: var(--box-shadow-dark);
+}
+
+/* Настройка стрелок навигации */
+.slickArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+  box-shadow: var(--box-shadow-light);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.slickArrow:hover {
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+}
+
+.slickArrow.slick-prev {
+  left: 0px; /* Позиционируем левую стрелку */
+}
+
+.slickArrow.slick-next {
+  right: 0px; /* Позиционируем правую стрелку */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .gallery {
+    padding: 60px 15px;
+  }
+  .gallery p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+  }
+  .slickContainer {
+    padding: 0 40px;
+  }
+  .slickImage {
+    height: 250px; /* Уменьшаем высоту на планшетах */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery h2 {
+    font-size: 2.2em;
+  }
+  .gallery p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+  }
+  .slickContainer {
+    padding: 0; /* Убираем горизонтальные отступы на мобильных */
+  }
+  .slickImage {
+    height: 200px; /* Уменьшаем высоту на мобильных */
+  }
+  .slickArrow {
+    width: 35px;
+    height: 35px;
+  }
+  .slickArrow.slick-prev {
+    left: 5px;
+  }
+  .slickArrow.slick-next {
+    right: 5px;
+  }
+  /* Стилизация точек индикатора */
+  .slickDots {
+    bottom: -20px !important; /* Смещаем точки немного ниже */
+  }
+  .slickDots li button::before {
+    color: var(--secondary-color) !important; /* Цвет точек */
+  }
+}

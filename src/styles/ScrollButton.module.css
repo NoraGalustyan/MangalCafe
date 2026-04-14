@@ -1,0 +1,51 @@
+/* styles/ScrollButton.module.css */
+.scrollBtn {
+  position: fixed;
+  bottom: 20px; /* Ниже кнопки телефона */
+  right: 20px;
+  z-index: 1010;
+  background-color: var(--primary-color); /* Темнее, чем кнопка телефона */
+  color: var(--light-text-color);
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow-dark);
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  animation: fadeInScroll 0.5s ease-out; /* Плавное появление */
+}
+
+.scrollBtn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Анимация появления */
+@keyframes fadeInScroll {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Скрываем на очень малых экранах, если нужно */
+@media (max-width: 480px) {
+  .scrollBtn {
+    bottom: 20px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}

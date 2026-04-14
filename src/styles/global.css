@@ -1,0 +1,160 @@
+/* styles/global.css */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+/* Импорты стилей react-slick */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+/* Переменные для цветов и шрифтов */
+:root {
+  --primary-color: #8b4513; /* Chocolate */
+  --secondary-color: #daa520; /* Goldenrod */
+  --accent-color: #f5deb3; /* Wheat */
+  --background-color: #fff8dc; /* Cornsilk */
+  --text-color: #333;
+  --dark-text-color: #2c2c2c;
+  --light-text-color: #f8f8f8;
+  --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --box-shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  border-radius: 2px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+section {
+  padding: 80px 20px;
+  margin-bottom: 60px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow-light);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden; /* Для эффектов фона */
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4; /* Полупрозрачность фона */
+}
+
+/* Контейнер для секций, чтобы выравнивать контент */
+.section-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Кнопки */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-top: 20px;
+  background-color: var(--secondary-color);
+  color: var(--light-text-color);
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--box-shadow-light);
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-dark);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2.2em;
+  }
+  section {
+    padding: 50px 15px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.8em;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}

@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+// App.tsx
+import React from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ScrollButton from "./components/ScrollButton";
+import PhoneButton from "./components/PhoneButton";
+import About from "./sections/About";
+import Menu from "./sections/Menu";
+import WhyUs from "./sections/WhyUs";
+import Gallery from "./sections/Gallery";
+import Delivery from "./sections/Delivery";
+import Contacts from "./sections/Contacts";
+import "./styles/global.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <main>
+        <About />
+        <Gallery />
+        <Menu />
+        <WhyUs />
+        <Delivery />
+        {/* <Contacts /> */}
+      </main>
+      <PhoneButton />
+      <ScrollButton />
+      <Footer />
+    </>
   );
 }
-
 export default App;
